@@ -1,6 +1,6 @@
 @font-face {
     font-family: GhostClan;
-    src: url("/style/GhostClan.otf") format("opentype");
+    src: url("/r6/style/GhostClan.otf") format("opentype");
 }
 
 body {
@@ -50,7 +50,7 @@ input[type=number] {
     flex-direction: column;
     justify-content: center;
     background-color: #432874;
-    background-image: url("/image/home.jpg");
+    background-image: url("/r6/image/home.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
