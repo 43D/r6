@@ -77,7 +77,7 @@ input[type=number] {
     font: 4rem GhostClan, sans-serif;
     color: #fff;
     text-shadow: 0 0 2px #61346b, 0 0 3px #61346b, 0 0 10px #61346b, 0 0 10px #61346b, 0 0 10px #61346b, 0 0 10px #61346b, 0 0 10px #61346b, 0 0 10px #61346b;
-    /* text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #61346b, 0 0 80px #61346b, 0 0 90px #61346b, 0 0 100px #61346b, 0 0 150px #61346b; */
+    /*text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #61346b, 0 0 80px #61346b, 0 0 90px #61346b, 0 0 100px #61346b, 0 0 150px #61346b; */
 }
 
 #top {
