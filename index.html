@@ -5,161 +5,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R6 do capeta</title>
-    <style>
-        input {
-            width: 17%;
-            margin: 0;
-            padding: 1%;
-        }
-        
-        button {
-            height: 70px;
-            font-size: 2rem;
-        }
-        
-        .wrapper {
-            display: flex;
-            justify-content: center;
-        }
-    </style>
-    <link rel="shortcut icon" href="./banner.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/css.css">
+    <link rel="shortcut icon" href="./image/banner.jpg" type="image/x-icon">
 </head>
 
 <body>
+    <div class="fullscreen main" id="home">
+        <div id="titulo">
+            <h1 class="text-center GC">Porpeta Empire</h1>
+            <hr>
+            <h1 class="text-center GC">Camp. de Tom Clancy's Rainbow Six® Siege</h1>
+        </div>
+        <div class="text-center" id="bot">
+            <a href="#sorte" id="homeStart">&#8643 Iniciar o sorteio &#8642</a>
+        </div>
+    </div>
+    <div class="fullscreen d-none" id="sorte">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="text-center col-12" id="top">
+                    <a href="#home" id="sorteH">&#8639 Voltar home &#8638</a>
+                    <hr>
+                </div>
+                <div class="col-lg-2 col-12">
+                </div>
+                <div class="col-lg-8 col-12" id="select">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text" id="b0">Modo de jogo:</span>
+                        <select name="tipo" aria-describedby="b0" id="b1" class="group-f">
+                            <option value="mvp">*   MVP do server</option>
+                            <option value="casual" disabled>** PvP casual</option>
+                            <option value="mata" disabled>***Mata-Mata de equipes</option>
+                        </select>
+                        <span class="input-group-text" id="b2">Quantidade de times:</span>
+                        <input type="number" id="b3" class="form-control group-f" disabled aria-describedby="b2" value="2" min="2" max="32">
+                        <select class="d-none group-f" name="quant" id="b4" aria-describedby="b2">
+                            <option value="2">02</option>
+                            <option value="4">04</option>
+                            <option value="8">08</option>
+                            <option value="16">16</option>
+                            <option value="32">32</option>
+                        </select>
+                    </div>
+                    <div class="text-light">
+                        <p class="m-0 d-block" id="b1_1">* 10 players, 1 sonho e 1 vencedor, PvP entre dois times, os perdedores vão para casa e os vitoriosos se divide em 2 para uma nova partida, vence o último quer sair apagando luz e fechando a porta.</p>
+                        <p class="m-0 d-none" id="b1_2">** Sorteia 2 ou mais times e lutem casualmente pela diversão, no rules no life.</p>
+                        <p class="m-0 d-none" id="b1_3">*** De 2 à 32 times, em uma tabela de mata-mata, vence a glória o último time que ficar em pé.</p>
+                    </div>
+
+                </div>
+                <div class="text-center col-12" id="bot2">
+                    <hr>
+                    <a href="#inf" id="random">&#8643 Configurar sorteio &#8642</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fullscreen d-none" id="inf">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="text-center col-12" id="top2">
+                    <a href="#sorte" id="infSorte">&#8639 Voltar configurações &#8638</a>
+                    <hr>
+                </div>
+                <div class="col-12 text-center text-light">
+                    <h3>Insira os jogadores:</h3>
+                </div>
+                <div class="d-none col-12" id="inf-mvp">
+                    <div class="wrapper">
+                        <input class="input-name" type="text" id="mvp1">
+                        <input class="input-name" type="text" id="mvp2">
+                        <input class="input-name" type="text" id="mvp3">
+                        <input class="input-name" type="text" id="mvp4">
+                        <input class="input-name" type="text" id="mvp5">
+                    </div>
+                    <div class="wrapper">
+                        <input class="input-name" type="text" id="mvp6">
+                        <input class="input-name" type="text" id="mvp7">
+                        <input class="input-name" type="text" id="mvp8">
+                        <input class="input-name" type="text" id="mvp9">
+                        <input class="input-name" type="text" id="mvp10">
+                    </div>
+                </div>
+                <div class="d-none col-12" id="inf-casual">
+                </div>
+                <div class="d-none col-12" id="inf-mata">
+                </div>
+
+
+
+
+                <div class="text-center col-12" id="bot2">
+                    <hr>
+                    <a href="javascript:void(0)" id="sorteando">&#8643 Sortear &#8642</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fullscreen d-none" id="resultado">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="text-center col-12" id="top3">
+                    <a href="#inf" id="final-inf" class="mx-2">&#8639 Voltar &#8638</a>
+                    <a href="#resultado" id="final-sorteando" class="mx-2">&#8639 Sortear novamente &#8638</a>
+                    <a href="#sorte" id="final-sorte" class="mx-2">&#8639 Criar novo sorteio &#8638</a>
+                    <hr>
+                </div>
+                <div class="final-mvp row row-cols-1 row-cols-md-3 g-4" style="justify-content: center;">
+                    <div class="col">
+                        <div class="card border-info bg-dark text-light col-3" style="width: 100%;">
+                            <div class="card-body">
+                                <h5 class="card-title">Time 1:</h5>
+                                <ul>
+                                    <li id="final-mvp1"></li>
+                                    <li id="final-mvp3"></li>
+                                    <li id="final-mvp5"></li>
+                                    <li id="final-mvp7"></li>
+                                    <li id="final-mvp9"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border-info bg-dark text-light col-3" style="width: 100%;">
+                            <div class="card-body">
+                                <h5 class="card-title">Time 2:</h5>
+                                <ul>
+                                    <li id="final-mvp2"></li>
+                                    <li id="final-mvp4"></li>
+                                    <li id="final-mvp6"></li>
+                                    <li id="final-mvp8"></li>
+                                    <li id="final-mvp10"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center col-12">
+                    <hr>
+                    <a href="javascript:void(0)" id="next" class="final-mvp d-none">&#8643 Proxima rodada &#8642</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div>
-        <h1 style="text-align: center;">Campeonato Porpeta de R6</h1>
-    </div>
-    <div class="wrapper">
-        <img src="https://github.com/43D/r6/raw/main/banner.jpg" alt="banner" style="max-width: 180px;">
-    </div>
-    <div>
-        <br>
-        <br>
-        <br>
-        <h3 style="text-align: center;">Insira os jogadores</h3>
-        <div class="wrapper">
-            <input type="text" id="a1">
-            <input type="text" id="a2">
-            <input type="text" id="a3">
-            <input type="text" id="a4">
-            <input type="text" id="a5">
+        <div class="modal fade" id="aviso" tabindex="-1" aria-labelledby="avisoLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h5 class="modal-title" id="avisoLabel">Aviso</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p id="avisoFinal"> k </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="closeModal" class="btn btn-info" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="wrapper">
-            <input type="text" id="b1">
-            <input type="text" id="b2">
-            <input type="text" id="b3">
-            <input type="text" id="b4">
-            <input type="text" id="b5">
-        </div>
-        <div style="margin-top: 50px;" class="wrapper">
-            <button onclick="sorte()">Sortear</button>
-        </div>
-    </div>
-    <div class="wrapper">
-        <div>
-            <ul>
-                <li id="c1"></li>
-                <li id="c2"></li>
-                <li id="c3"></li>
-                <li id="c4"></li>
-                <li id="c5"></li>
-            </ul>
-        </div>
-        <div>
-            <ul>
-                <li id="d1"></li>
-                <li id="d2"></li>
-                <li id="d3"></li>
-                <li id="d4"></li>
-                <li id="d5"></li>
-            </ul>
+        <div class="modal fade" id="mvpModal" tabindex="-1" aria-labelledby="mvpModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h5 class="modal-title" id="mvpModalLabel">Avançando para próxima rodada.</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p id="mvpModalFinal"> k </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="./script/app.js"></script>
 
-
-    <script>
-        function sorte() {
-            var nome1 = ["a", "b", "c", "d", "e"];
-            var status1 = [0, 0, 0, 0, 0];
-            var status2 = [0, 0, 0, 0, 0];
-            var nome2 = ["a", "b", "c", "d", "e"];
-            var final = [];
-            //limpa
-
-
-
-
-
-
-
-
-            while (true) {
-                var numer = (Math.random() * (625 - 1)) / 125 + 1;
-                var numero = numer.toString().split(".");
-                var letr = (Math.random() * (250 - 1)) / 125 + 1;
-                var letra = letr.toString().split(".");
-                if (letra[0] == 1) {
-                    if (status1[numero[0] - 1] == 0) {
-                        status1[numero[0] - 1] = 1;
-                        final.push("a" + numero[0].toString());
-                    }
-                } else {
-                    if (status2[numero[0] - 1] == 0) {
-                        status2[numero[0] - 1] = 1;
-                        final.push("b" + numero[0].toString());
-                    }
-                }
-
-                var sum1 = status1.reduce((a, b) => a + b, 0);
-                var sum2 = status2.reduce((a, b) => a + b, 0);
-                if (sum1 == 5)
-                    if (sum2 == 5)
-                        break;
-            }
-            clear();
-            lancar(final);
-        }
-
-        function clear() {
-            document.getElementById("c1").innerHTML = "";
-            document.getElementById("c2").innerHTML = "";
-            document.getElementById("c3").innerHTML = "";
-            document.getElementById("c4").innerHTML = "";
-            document.getElementById("c5").innerHTML = "";
-
-            document.getElementById("d1").innerHTML = "";
-            document.getElementById("d2").innerHTML = "";
-            document.getElementById("d3").innerHTML = "";
-            document.getElementById("d4").innerHTML = "";
-            document.getElementById("d5").innerHTML = "";
-
-        }
-
-        function lancar(final) {
-            var j = 1;
-            var k = 0;
-            for (var i in final) {
-                if (k == 0) {
-                    var m = "c" + j.toString();
-                    if (document.getElementById(final[i]).value != "") {
-                        document.getElementById(m).innerHTML = document.getElementById(final[i]).value;
-                        k = 1;
-                    }
-                } else if (k == 1) {
-                    var m = "d" + j.toString();
-                    if (document.getElementById(final[i]).value != "") {
-                        document.getElementById(m).innerHTML = document.getElementById(final[i]).value;
-                        k = 0;
-                        j += 1;
-                    }
-                }
-            }
-
-            console.log("a");
-
-
-        }
-    </script>
 </body>
 
 </html>

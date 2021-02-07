@@ -1,0 +1,100 @@
+@font-face {
+    font-family: GhostClan;
+    src: url("/style/GhostClan.otf") format("opentype");
+}
+
+body {
+    overflow-y: hidden;
+    margin: 0px;
+}
+
+a {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c4bfbf;
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+input[type=number] {
+    text-align: right;
+}
+
+.fullscreen {
+    height: 100vh;
+    background-color: #5f3b7d;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #432874;
+    background-image: url("/image/home.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.group-f {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 100px;
+}
+
+#bot {
+    margin-top: 150px;
+}
+
+#bot2 {
+    position: absolute;
+    color: #1134fa;
+    bottom: 1vh;
+}
+
+.GC {
+    font: 4rem GhostClan, sans-serif;
+    color: #fff;
+    text-shadow: 0 0 2px #61346b, 0 0 3px #61346b, 0 0 10px #61346b, 0 0 10px #61346b, 0 0 10px #61346b, 0 0 10px #61346b, 0 0 10px #61346b, 0 0 10px #61346b;
+    /* text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #61346b, 0 0 80px #61346b, 0 0 90px #61346b, 0 0 100px #61346b, 0 0 150px #61346b; */
+}
+
+#top {
+    margin-bottom: 25vh;
+}
+
+@media screen and (max-width: 992px) {
+    .input-name {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .input-name {
+        min-width: 100%;
+    }
+    .wrapper {
+        display: block;
+    }
+}
